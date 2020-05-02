@@ -1,0 +1,199 @@
+1) Creating student 
+
+POST: http://localhost:8080/learn-online/learn
+
+Input
+{
+  "firstName": "Amjad",
+  "lastName": "Quazi",
+  "email": "Amjad@gmail.com",
+  "reemail": "Stev@gmail.com",
+  "password": "SomeSecret2Password#",
+  "repassword": "SomeSecret2Password#",
+  "active": "true",
+  "phone": "7878489761",
+  "city": "Patur",
+  "state": "MH",
+  "country": "India"
+}
+
+Output
+{
+  "responseDetail": {
+    "studentKey": "e31e99ba44ef790133954bdf9af07de04ff88af2dd60a44828e5bae91a9e4607"
+  },
+  "message": "Student added/signup is successfully",
+  "status": "SUCCESS"
+}
+
+
+2) Update Student
+
+PUT http://localhost:8080/learn-online/learn
+
+Input
+{
+  "firstName": "Farhan",
+  "lastName": "Quazi",
+  "email": "FARHAN@gmail.com",
+  "reemail": "farhan@gmail.com",
+  "password": "x1cK$1nt",
+  "repassword": "x1cK$1nt",
+  "active": "true",
+  "phone": "1234567869",
+  "city": "Bangalore",
+  "state": "KA",
+  "country": "India"
+}
+
+Output
+{
+  "responseDetail": {
+    "studentKey": "12301f3b04f21a9a8f5d507b246c3b84f20cd8aead3b06214caa128cca0e65c"
+  },
+  "message": "Student update is successfull",
+  "status": "SUCCESS"
+}
+
+
+3) Buy Courses
+
+POST http://localhost:8080/learn-online/learn/buy
+
+Input
+{
+  "studentEmail": "FARHAN@gmail.com",
+  "courseKeys": [
+    "2e552bb07890a68f4563bc2beaa1a8227aae55106f202494d570cb5ab8ce5fb0",
+    "3e633d515cb7e087749d52f2f95567ded8b326928c7ad876e32939a26717046e",
+    "d483bf6fad787dd0210d1ebd8dc8cd17651d673996f561f1173a578e4e6a9a4e"
+  ]
+}	
+
+Output:
+{
+  "responseDetail": {
+    "studentKey": "12301f3b04f21a9a8f5d507b246c3b84f20cd8aead3b06214caa128cca0e65c"
+  },
+  "message": "Your courses purchased order have been placed successfully",
+  "status": "SUCCESS"
+}
+
+4) Cancel Purchased courses within 30 max days
+
+DELETE http://localhost:8080/learn-online/learn/cancel
+
+Input 
+
+{
+  "studentEmail": "farhan@gmail.com",
+  "courseKeys": [
+    "73c505743df6f970587f4cd7e4ab9034fa3671fe6a60feb8c689f756e9b6ef7",
+    "d483bf6fad787dd0210d1ebd8dc8cd17651d673996f561f1173a578e4e6a9a4e"
+  ]
+}	
+
+
+Output
+{
+  "timestamp": "2020-05-02",
+  "status": 400,
+  "errors": [
+    "Course token size should be 64 characters long"
+  ]
+}
+
+
+
+5) Get Student Details By Id
+
+GET http://localhost:8080/learn-online/learn/search/farhan@gmail.com
+
+
+Output
+
+{
+  "responseDetail": {
+    "studentKey": "12301f3b04f21a9a8f5d507b246c3b84f20cd8aead3b06214caa128cca0e65c",
+    "firstName": "Farhan",
+    "lastName": "Quazi",
+    "email": "FARHAN@gmail.com",
+    "encryptedPassword": "x1cK$1nt",
+    "phone": "1234567869",
+    "country": "India",
+    "state": "KA",
+    "courseOrders": [
+      {
+        "courseOrderId": 0,
+        "student": null,
+        "course": {
+          "courseId": 0,
+          "courseKey": "2e552bb07890a68f4563bc2beaa1a8227aae55106f202494d570cb5ab8ce5fb0",
+          "domainName": "Java",
+          "courseName": "Microservice Zero to Hero",
+          "description": "Take you from beggining to Expert level quickly",
+          "chapters": 200,
+          "durationInHours": 500,
+          "price": 420,
+          "rating": 5.8,
+          "creationtDate": "2018-06-10",
+          "lastUpdateDate": "2020-01-01"
+        },
+        "rating": 5.8,
+        "creationDate": "2020-02-28",
+        "lastUpdateDate": null,
+        "discount": null,
+        "courseOrderKey": "bbb9f61ed51461fde2400c6aee189d1ef5f90c832514ddc6cf490f9f8c9fd6e8"
+      },
+      {
+        "courseOrderId": 0,
+        "student": null,
+        "course": {
+          "courseId": 0,
+          "courseKey": "d483bf6fad787dd0210d1ebd8dc8cd17651d673996f561f1173a578e4e6a9a4e",
+          "domainName": "Java",
+          "courseName": "Restful Web Service with Spring boot",
+          "description": "Give you hands on experience on creating project with Restful WebService, JDK8 and Spring Boot",
+          "chapters": 180,
+          "durationInHours": 200,
+          "price": 420,
+          "rating": 5,
+          "creationtDate": "2016-09-28",
+          "lastUpdateDate": "2010-08-28"
+        },
+        "rating": 5,
+        "creationDate": "2020-05-02",
+        "lastUpdateDate": null,
+        "discount": null,
+        "courseOrderKey": "30ef27b8c959123ec2971a4fcfaf36ff6c46d1090b40592fb02f3a8cafd4221e"
+      },
+      {
+        "courseOrderId": 0,
+        "student": null,
+        "course": {
+          "courseId": 0,
+          "courseKey": "3e633d515cb7e087749d52f2f95567ded8b326928c7ad876e32939a26717046e",
+          "domainName": "Java",
+          "courseName": "JMS, RabiitMQ, ActiveMQ, Kubernate, Multi Theading",
+          "description": "This course is good for advance java student. It will teach effective use JMS, Asynchronous Programming, Thead handling and testing using JUNIT, Mockito, PowerMock, user Sonar Qube and Code Coverage",
+          "chapters": 200,
+          "durationInHours": 800,
+          "price": 500,
+          "rating": 5,
+          "creationtDate": "2020-02-20",
+          "lastUpdateDate": "2020-04-28"
+        },
+        "rating": 5,
+        "creationDate": "2020-05-02",
+        "lastUpdateDate": null,
+        "discount": null,
+        "courseOrderKey": "8e111bffc00e6e8d9fc749e1bda06c8e2c7734101bad6a8e045f05db8af0ce90"
+      }
+    ],
+    "active": false,
+    "creationtDate": "2020-04-28",
+    "lastUpdateDate": "2020-05-02"
+  },
+  "message": "DATA FOUND",
+  "status": "SUCCESS"
+} 
