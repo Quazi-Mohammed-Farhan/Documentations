@@ -197,3 +197,238 @@ Output
   "message": "DATA FOUND",
   "status": "SUCCESS"
 } 
+
+5) Search Student by Domain and Rating
+
+  GET httpL//localhost:8080/learn-online/learn/courseByDomainAndRating
+  
+  
+  Output:
+  {
+	"responseDetail": {
+		"Java": {
+			"5.0": [
+				{
+					"courseId": null,
+					"courseKey": "d483bf6fad787dd0210d1ebd8dc8cd17651d673996f561f1173a578e4e6a9a4e",
+					"domainName": "Java",
+					"courseName": "Restful Web Service with Spring boot",
+					"description": "Give you hands on experience on creating project with Restful WebService, JDK8 and Spring Boot",
+					"chapters": 180,
+					"durationInHours": 200,
+					"price": 420,
+					"rating": 5,
+					"creationtDate": "2016-09-28",
+					"lastUpdateDate": "2010-08-28"
+				},
+				{
+					"courseId": null,
+					"courseKey": "3e633d515cb7e087749d52f2f95567ded8b326928c7ad876e32939a26717046e",
+					"domainName": "Java",
+					"courseName": "JMS, RabiitMQ, ActiveMQ, Kubernate, Multi Theading",
+					"description": "This course is good for advance java student. It will teach effective use JMS, Asynchronous Programming, Thead handling and testing using JUNIT, Mockito, PowerMock, user Sonar Qube and Code Coverage",
+					"chapters": 200,
+					"durationInHours": 800,
+					"price": 500,
+					"rating": 5,
+					"creationtDate": "2020-02-20",
+					"lastUpdateDate": "2020-04-28"
+				},
+				{
+					"courseId": null,
+					"courseKey": "67a7b6e00304c3605df81c1d578ff6f7f8ce63bc5b9acb",
+					"domainName": "Java",
+					"courseName": "Java Design Pattern and UML",
+					"description": "It teaches you design patterns, Design pattern in Java programming and UML designing",
+					"chapters": 500,
+					"durationInHours": 200,
+					"price": 420,
+					"rating": 5,
+					"creationtDate": "2020-01-29",
+					"lastUpdateDate": null
+				}
+			],
+			"5.8": [
+				{
+					"courseId": null,
+					"courseKey": "2e552bb07890a68f4563bc2beaa1a8227aae55106f202494d570cb5ab8ce5fb0",
+					"domainName": "Java",
+					"courseName": "Microservice Zero to Hero",
+					"description": "Take you from beggining to Expert level quickly",
+					"chapters": 200,
+					"durationInHours": 500,
+					"price": 420,
+					"rating": 5.8,
+					"creationtDate": "2018-06-10",
+					"lastUpdateDate": "2020-01-01"
+				}
+			]
+		},
+		"dev": {
+			"4.0": [
+				{
+					"courseId": null,
+					"courseKey": "7a84d7b03398b0978e9bcf23e3a7a102e397b1236141ee71d9b5c8ecda6d9ad6",
+					"domainName": "dev",
+					"courseName": "AWS Deployment",
+					"description": "Course is build for Bignner, and Expert and make you confident DWAPS",
+					"chapters": 150,
+					"durationInHours": 300,
+					"price": 500,
+					"rating": 4,
+					"creationtDate": "2020-01-01",
+					"lastUpdateDate": "2020-10-30"
+				}
+			]
+		},
+		"Os": {
+			"4.7": [
+				{
+					"courseId": null,
+					"courseKey": "ea699a8b09c3c99a9d67a7b6e00304c3605df81c1d578ff6f7f8ce63bc5b9acb",
+					"domainName": "Os",
+					"courseName": "Linux",
+					"description": "Teach you basic commands then writing scripts and other stuff",
+					"chapters": 100,
+					"durationInHours": 150,
+					"price": 420,
+					"rating": 4.7,
+					"creationtDate": "2019-01-01",
+					"lastUpdateDate": "2019-10-30"
+				}
+			]
+		},
+		"Db": {
+			"3.7": [
+				{
+					"courseId": null,
+					"courseKey": "21a0e835e26afdb69342060084641f61913cd9db4fe5f63addc7a438ebee420f",
+					"domainName": "Db",
+					"courseName": "MySQL For Experts",
+					"description": "Must go throuh this subject",
+					"chapters": 220,
+					"durationInHours": 400,
+					"price": 420,
+					"rating": 3.7,
+					"creationtDate": "2017-11-10",
+					"lastUpdateDate": "2020-03-10"
+				}
+			]
+		}
+	},
+	"message": "Courses search by domain and rating is successful",
+	"status": "SUCCESS"
+}
+  
+
+6) Search All Courses by Domain
+
+ GET httpL//localhost:8080/learn-online/learn/courseByDomain
+
+ Output:
+
+{
+	"responseDetail": {
+		"Java": [
+			{
+				"courseId": null,
+				"courseKey": "2e552bb07890a68f4563bc2beaa1a8227aae55106f202494d570cb5ab8ce5fb0",
+				"domainName": "Java",
+				"courseName": "Microservice Zero to Hero",
+				"description": "Take you from beggining to Expert level quickly",
+				"chapters": 200,
+				"durationInHours": 500,
+				"price": 420,
+				"rating": 5.8,
+				"creationtDate": "2018-06-10",
+				"lastUpdateDate": "2020-01-01"
+			},
+			{
+				"courseId": null,
+				"courseKey": "d483bf6fad787dd0210d1ebd8dc8cd17651d673996f561f1173a578e4e6a9a4e",
+				"domainName": "Java",
+				"courseName": "Restful Web Service with Spring boot",
+				"description": "Give you hands on experience on creating project with Restful WebService, JDK8 and Spring Boot",
+				"chapters": 180,
+				"durationInHours": 200,
+				"price": 420,
+				"rating": 5,
+				"creationtDate": "2016-09-28",
+				"lastUpdateDate": "2010-08-28"
+			},
+			{
+				"courseId": null,
+				"courseKey": "3e633d515cb7e087749d52f2f95567ded8b326928c7ad876e32939a26717046e",
+				"domainName": "Java",
+				"courseName": "JMS, RabiitMQ, ActiveMQ, Kubernate, Multi Theading",
+				"description": "This course is good for advance java student. It will teach effective use JMS, Asynchronous Programming, Thead handling and testing using JUNIT, Mockito, PowerMock, user Sonar Qube and Code Coverage",
+				"chapters": 200,
+				"durationInHours": 800,
+				"price": 500,
+				"rating": 5,
+				"creationtDate": "2020-02-20",
+				"lastUpdateDate": "2020-04-28"
+			},
+			{
+				"courseId": null,
+				"courseKey": "67a7b6e00304c3605df81c1d578ff6f7f8ce63bc5b9acb",
+				"domainName": "Java",
+				"courseName": "Java Design Pattern and UML",
+				"description": "It teaches you design patterns, Design pattern in Java programming and UML designing",
+				"chapters": 500,
+				"durationInHours": 200,
+				"price": 420,
+				"rating": 5,
+				"creationtDate": "2020-01-29",
+				"lastUpdateDate": null
+			}
+		],
+		"dev": [
+			{
+				"courseId": null,
+				"courseKey": "7a84d7b03398b0978e9bcf23e3a7a102e397b1236141ee71d9b5c8ecda6d9ad6",
+				"domainName": "dev",
+				"courseName": "AWS Deployment",
+				"description": "Course is build for Bignner, and Expert and make you confident DWAPS",
+				"chapters": 150,
+				"durationInHours": 300,
+				"price": 500,
+				"rating": 4,
+				"creationtDate": "2020-01-01",
+				"lastUpdateDate": "2020-10-30"
+			}
+		],
+		"Os": [
+			{
+				"courseId": null,
+				"courseKey": "ea699a8b09c3c99a9d67a7b6e00304c3605df81c1d578ff6f7f8ce63bc5b9acb",
+				"domainName": "Os",
+				"courseName": "Linux",
+				"description": "Teach you basic commands then writing scripts and other stuff",
+				"chapters": 100,
+				"durationInHours": 150,
+				"price": 420,
+				"rating": 4.7,
+				"creationtDate": "2019-01-01",
+				"lastUpdateDate": "2019-10-30"
+			}
+		],
+		"Db": [
+			{
+				"courseId": null,
+				"courseKey": "21a0e835e26afdb69342060084641f61913cd9db4fe5f63addc7a438ebee420f",
+				"domainName": "Db",
+				"courseName": "MySQL For Experts",
+				"description": "Must go throuh this subject",
+				"chapters": 220,
+				"durationInHours": 400,
+				"price": 420,
+				"rating": 3.7,
+				"creationtDate": "2017-11-10",
+				"lastUpdateDate": "2020-03-10"
+			}
+		]
+	},
+	"message": "Courses search by domain and rating is successful",
+	"status": "SUCCESS"
+} 
